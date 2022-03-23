@@ -1,0 +1,20 @@
+{% extends 'base/main.html' %}
+
+{% block title %}
+Создание статьи
+{% endblock %}
+
+{% block body %}
+<div class="alert alert-success">
+    <h2 align = "center">Создание новой статьи</h2>
+    <form method="post">
+        <input type="text" name="title" id = "title" class="form-control" placeholder="Заголовок статьи"><br>
+        <input type="text" name="tag" id = "tag" class="form-control" placeholder="Категория"><br>
+        <input type="text" name="author" id = "author" class="form-control" placeholder="Автор статьи"><br>
+        <textarea type="text" name="intro" id = "intro" class="form-control" placeholder="Краткая аннотация к статье"></textarea><br>
+        <textarea type="text" name = "text" id = "text" class="form-control" placeholder="Текст статьи"></textarea> <br>
+        <input type="submit" class="btn btn-success" value="Опубликовать"> 
+        <a href="/" class="btn btn-danger">Отменить</a> 
+    </form>
+    </div>
+{% endblock %}

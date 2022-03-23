@@ -1,0 +1,12 @@
+{% extends 'base/main.html' %}
+
+{% block title %}
+Добавление статьи
+{% endblock %}
+
+{% block body %}
+    <h1>При добавлении статьи произошла ошибка!</h1><br>
+    <form action="/create">
+        <button class = "btn btn-danger">На страницу создания статьи</button>
+    </form>
+{% endblock %}

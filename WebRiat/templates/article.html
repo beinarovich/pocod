@@ -1,0 +1,22 @@
+{% extends 'base/main.html' %}
+
+{% block title %}
+{{ article.title }}
+{% endblock %}
+
+{% block body %}
+
+    <div class="alert alert-success" role="alert">
+        <h2>{{article.title}}</h2>
+        <table>
+            <tr>
+                <td><p>Категория:&nbsp;{{article.tag}}&nbsp;&nbsp;</p></td>
+                <td><p>Дата публикации:&nbsp;{{article.date.date()}}&nbsp;&nbsp;</p></td>
+                <td> <p>Автор:&nbsp;<i><b>{{article.author}}</b></i></p></td>
+            </tr>
+        </table>    
+        <p>{{article.text}}</p>
+        
+    </div>
+
+{% endblock %}

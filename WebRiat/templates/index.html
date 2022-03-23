@@ -1,0 +1,31 @@
+{% extends 'base/main.html' %}
+
+{% block title %}
+    IH - Статьи
+{% endblock %}
+
+{% block body %}
+    {% if articles|length > 0 %}
+        {% for el in articles %}
+            <div class="alert alert-info">
+                <h2>{{el.title}}</h2>
+                <table>
+                    <tr>
+                        <td><p>Категория:&nbsp;{{el.tag}}&nbsp;&nbsp;</p></td>
+                        <td><p>Дата публикации:&nbsp;{{el.date.date()}}&nbsp;&nbsp;</p></td>
+                        <td> <p>Автор:&nbsp;<i><b>{{el.author}}</b></i></p></td>
+                    </tr>
+                </table>    
+                <p>{{el.intro}}</p>
+                <a href="/{{ el.id }}" target="_blanc" class = "btn btn-primary">Открыть</a>
+                <a href="/{{ el.id }}/edit" class = "btn btn-warning">Редактировать</a>
+                <a href="/{{ el.id }}/delete" class = "btn btn-danger">Удалить</a>
+            </div>
+        {% endfor %}
+    {% else %}
+        <div class="alert alert-danger" align = "center">
+            <h1>Не создано ни одной статьи!</h1>
+        </div>
+        <p align = "center"><a href="/create" class = "btn btn-success">Создать</a></p>
+    {% endif %}
+{% endblock %}
